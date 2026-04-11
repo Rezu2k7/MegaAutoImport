@@ -9,7 +9,18 @@ require('dotenv').config();
 const User = require('./Models/User');
 const Car = require('./Models/Car');
 
+const path = require('path');
+const express = require('express');
 const app = express();
+
+// This line tells Node to serve your CSS, Images, and JS files from a folder
+app.use(express.static(path.join(__dirname, 'public'))); 
+
+// This line tells Node to serve your index.html when someone visits the root
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
