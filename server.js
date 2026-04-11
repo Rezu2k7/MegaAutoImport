@@ -9,7 +9,6 @@ require('dotenv').config();
 const User = require('./Models/User');
 const Car = require('./Models/Car');
 
-const express = require('express');
 const app = express();
 
 // This line tells Node to serve your CSS, Images, and JS files from a folder
