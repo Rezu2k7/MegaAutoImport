@@ -1,3 +1,4 @@
+const express = require('express'); // 1. Define Express
 const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -5,31 +6,38 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
+const app = express(); // 2. CREATE the app BEFORE using it!
+
 const User = require('./Models/User');
 const Car = require('./Models/Car');
 
-// This line tells Node to serve your CSS, Images, and JS files from a folder
-app.use(express.static(path.join(__dirname)));
+// 3. MIDDLEWARE & STATIC FILES
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// This line tells Node to serve your index.html when someone visits the root
+// Serve static files from the root and the uploads folder
+app.use(express.static(path.join(__dirname)));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// 4. MAIN HOME ROUTE
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
+// 5. STORAGE CONFIGURATION
 const storage = multer.diskStorage({
     destination: (req, file, cb) => { cb(null, 'uploads/'); },
     filename: (req, file, cb) => { cb(null, Date.now() + '-' + file.originalname); }
 });
 const upload = multer({ storage: storage });
 
+// 6. DATABASE CONNECTION
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MAi Database Connected!'))
-    .catch(err => console.log(err));
+    .catch(err => console.log("Database connection error:", err));
 
+// 7. AUTH ROUTES
 app.post('/api/auth/register', async (req, res) => {
     try {
         const { username, password, role } = req.body;
@@ -53,12 +61,12 @@ app.post('/api/auth/login', async (req, res) => {
     } catch (error) { res.status(500).json({ error: "Server error" }); }
 });
 
+// 8. CAR INVENTORY ROUTES
 app.get('/api/cars', async (req, res) => {
     const cars = await Car.find().sort({ createdAt: -1 });
     res.json(cars);
 });
 
-// UPDATED: Save the recipient details
 app.post('/api/cars', upload.array('photos', 10), async (req, res) => {
     try {
         const { 
@@ -82,7 +90,6 @@ app.post('/api/cars', upload.array('photos', 10), async (req, res) => {
     } catch (error) { res.status(400).json({ error: "Error saving car." }); }
 });
 
-// UPDATED: Edit the recipient details
 app.patch('/api/cars/:id', async (req, res) => {
     try {
         const { 
@@ -137,4 +144,5 @@ app.patch('/api/cars/:id/documents', upload.array('docs', 5), async (req, res) =
     } catch (error) { res.status(400).json({ error: "Failed to upload documents." }); }
 });
 
-app.listen(5000, () => console.log("Server: http://localhost:5000"));
+// 9. START SERVER
+app.listen(5000, () => console.log("Server running on port 5000: http://localhost:5000"));
