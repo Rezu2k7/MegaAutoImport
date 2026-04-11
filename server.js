@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the root and the uploads folder
 app.use(express.static(path.join(__dirname)));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(__dirname));
 
 // 4. MAIN HOME ROUTE
 app.get('/', (req, res) => {
