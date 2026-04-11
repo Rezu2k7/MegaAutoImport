@@ -9,7 +9,6 @@ require('dotenv').config();
 const User = require('./Models/User');
 const Car = require('./Models/Car');
 
-const path = require('path');
 const express = require('express');
 const app = express();
 
