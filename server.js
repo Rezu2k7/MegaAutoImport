@@ -12,7 +12,7 @@ const Car = require('./Models/Car');
 const app = express();
 
 // This line tells Node to serve your CSS, Images, and JS files from a folder
-app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.static(path.join(__dirname)));
 
 // This line tells Node to serve your index.html when someone visits the root
 app.get('/', (req, res) => {
