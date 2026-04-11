@@ -1,5 +1,3 @@
-const path = require('path');       // This defines path
-const app = express();              // This starts the app
 const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
