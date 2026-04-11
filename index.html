@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Cars</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -237,7 +237,7 @@
         // --- FETCH DYNAMIC DEAL OF THE DAY FROM DATABASE ---
         async function fetchFeaturedCar() {
             try {
-                const res = await fetch('http://localhost:5000/api/cars/featured');
+                const res = await fetch('api/cars/featured');
                 if (res.ok) {
                     const car = await res.json();
                     if (car) {

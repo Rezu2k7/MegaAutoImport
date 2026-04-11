@@ -53,7 +53,7 @@
     // 4. LOAD CARS
     async function loadCars() {
         try {
-            const res = await fetch('http://localhost:5000/api/cars');
+            const res = await fetch('/api/cars');
             const cars = await res.json();
             carGrid.innerHTML = '';
             
@@ -244,7 +244,7 @@
             containerCode: document.getElementById('editContainerCode').value
         };
 
-        const res = await fetch(`http://localhost:5000/api/cars/${carId}`, {
+        const res = await fetch(`/api/cars/${carId}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -255,12 +255,12 @@
 
     window.deleteCar = async (id) => {
         if (!confirm("Delete vehicle permanently?")) return;
-        await fetch(`http://localhost:5000/api/cars/${id}`, { method: 'DELETE' });
+        await fetch(`/api/cars/${id}`, { method: 'DELETE' });
         loadCars();
     };
 
     window.updateCarStatus = async (carId, newStatus) => {
-        await fetch(`http://localhost:5000/api/cars/${carId}/status`, { 
+        await fetch(`/api/cars/${carId}/status`, { 
             method: 'PATCH', 
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ status: newStatus }) 
@@ -273,14 +273,14 @@
         if (!fileInput.files.length) return alert("Select a file.");
         const formData = new FormData();
         for(let i=0; i<fileInput.files.length; i++) { formData.append('docs', fileInput.files[i]); }
-        await fetch(`http://localhost:5000/api/cars/${carId}/documents`, { method: 'PATCH', body: formData });
+        await fetch(`/api/cars/${carId}/documents`, { method: 'PATCH', body: formData });
         carModal.classList.add('hidden');
         loadCars();
     };
 
     window.featureCar = async (id) => {
         if (!confirm("Set as Deal of the Day?")) return;
-        await fetch(`http://localhost:5000/api/cars/${id}/feature`, { method: 'PATCH' });
+        await fetch(`/api/cars/${id}/feature`, { method: 'PATCH' });
         loadCars();
     };
 
@@ -308,7 +308,7 @@
             const photos = document.getElementById('carPhotos').files;
             for(let i=0; i<photos.length; i++) { formData.append('photos', photos[i]); }
 
-            const res = await fetch('http://localhost:5000/api/cars', { method: 'POST', body: formData });
+            const res = await fetch('/api/cars', { method: 'POST', body: formData });
             if (res.ok) { addCarForm.reset(); showSection('garage'); }
         };
     }
@@ -316,7 +316,7 @@
     if (addUserForm) {
         addUserForm.onsubmit = async (e) => {
             e.preventDefault();
-            const res = await fetch('http://localhost:5000/api/auth/register', {
+            const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
