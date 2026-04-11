@@ -1,4 +1,5 @@
-
+const path = require('path');       // This defines path
+const app = express();              // This starts the app
 const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -8,8 +9,6 @@ require('dotenv').config();
 
 const User = require('./Models/User');
 const Car = require('./Models/Car');
-
-const app = express();
 
 // This line tells Node to serve your CSS, Images, and JS files from a folder
 app.use(express.static(path.join(__dirname)));
