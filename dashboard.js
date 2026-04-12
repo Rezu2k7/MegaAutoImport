@@ -293,6 +293,25 @@
     if (addCarForm) {
         addCarForm.onsubmit = async (e) => {
             e.preventDefault();
+            const photos = document.getElementById('carPhotos').files;
+            const maxPhotos = 30;
+            const maxTotalBytes = 95 * 1024 * 1024;
+
+            if (photos.length > maxPhotos) {
+                alert(`You can upload up to ${maxPhotos} photos at once.`);
+                return;
+            }
+
+            let totalBytes = 0;
+            for (let i = 0; i < photos.length; i++) {
+                totalBytes += photos[i].size;
+            }
+
+            if (totalBytes > maxTotalBytes) {
+                alert('These photos are too large to upload together. Please upload fewer photos at once or compress them first.');
+                return;
+            }
+
             const formData = new FormData();
             formData.append('makeModel', document.getElementById('carMake').value);
             formData.append('auctionPrice', document.getElementById('auctionPrice').value);
@@ -311,11 +330,21 @@
             formData.append('containerNumber', document.getElementById('carContainerNumber').value);
             formData.append('containerCode', document.getElementById('carContainerCode').value);
 
-            const photos = document.getElementById('carPhotos').files;
             for(let i=0; i<photos.length; i++) { formData.append('photos', photos[i]); }
 
             const res = await fetch('/api/cars', { method: 'POST', body: formData });
-            if (res.ok) { addCarForm.reset(); showSection('garage'); }
+            if (!res.ok) {
+                let message = 'Upload failed.';
+                try {
+                    const data = await res.json();
+                    message = data.error || message;
+                } catch (_) {}
+                alert(message);
+                return;
+            }
+
+            addCarForm.reset();
+            showSection('garage');
         };
     }
 

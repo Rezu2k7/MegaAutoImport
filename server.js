@@ -36,7 +36,13 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => { cb(null, uploadsDir); },
     filename: (req, file, cb) => { cb(null, Date.now() + '-' + file.originalname); }
 });
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage,
+    limits: {
+        files: 30,
+        fileSize: 50 * 1024 * 1024
+    }
+});
 
 // 6. DATABASE CONNECTION
 mongoose.connect(process.env.MONGO_URI)
@@ -73,14 +79,14 @@ app.get('/api/cars', async (req, res) => {
     res.json(cars);
 });
 
-app.post('/api/cars', upload.array('photos', 10), async (req, res) => {
+app.post('/api/cars', upload.array('photos', 30), async (req, res) => {
     try {
         const { 
             makeModel, auctionPrice, transportPrice, amountPaid, vin, dealerId, 
             purchaseDate, auctionName, lotNumber, buyLocation, containerNumber, containerCode,
             recipientFirstName, recipientLastName, recipientId, recipientPhone 
         } = req.body;
-        const imagePaths = req.files.map(file => file.filename);
+        const imagePaths = (req.files || []).map(file => file.filename);
         
         const newCar = new Car({ 
             makeModel, 
@@ -153,6 +159,26 @@ app.patch('/api/cars/:id/documents', upload.array('docs', 5), async (req, res) =
 // 9. START SERVER
 const PORT = Number(process.env.PORT) || 5000;
 const HOST = process.env.HOST || '0.0.0.0';
+
+app.use((err, req, res, next) => {
+    if (err instanceof multer.MulterError) {
+        if (err.code === 'LIMIT_FILE_SIZE') {
+            return res.status(413).json({ error: 'Each file must be 50 MB or smaller.' });
+        }
+
+        if (err.code === 'LIMIT_FILE_COUNT') {
+            return res.status(413).json({ error: 'You can upload up to 30 photos at once.' });
+        }
+
+        return res.status(400).json({ error: err.message });
+    }
+
+    if (err?.status === 413) {
+        return res.status(413).json({ error: 'Upload is too large for the server.' });
+    }
+
+    return next(err);
+});
 
 app.listen(PORT, HOST, () => {
     console.log(`Server running on ${HOST}:${PORT}`);
