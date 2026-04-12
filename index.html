@@ -135,7 +135,7 @@
         <div class="section-container">
             <h2 class="section-title" id="txt-sec-about">About Us</h2>
             <div class="about-content">
-                <p id="txt-about-desc">We represent the pinnacle of luxury and craftsmanship. Every detail is meticulously engineered to provide an unparalleled experience of elegance and performance.</p>
+                <p id="txt-about-desc">Our company is a trusted partner in selecting and importing cars from the USA. Our goal is to offer customers the most transparent, fast, and secure service.<br><br>We work with leading auctions such as Copart and IAAI, which allows us to select the best vehicles at the most competitive prices.<br><br>Our team approaches each client individually and manages the full process from vehicle selection to shipping and customs clearance.<br><br>For us, trust, quality, and customer satisfaction come first.</p>
             </div>
         </div>
     </section>
@@ -382,91 +382,99 @@
 
         // --- TRANSLATION LOGIC ---
         const translations = {
-            en: { 
-                home: "Home", dealMenu: "Deal of the Day", about: "About Us", menu: "Menu", calcMenu: "Shipping Calculator", 
-                secCalc: "Delivery Cost Calculator", calcAuction: "Select Auction", calcOrigin: "Select Origin City (USA)", calcDest: "Select Destination Port", calcEst: "Estimated Shipping Cost:", 
-                portal: "MAi Portal", heroTitle: "Inspiring Greatness", cta: "Discover More", contact: "Contact", office: "Office Location", workers: "Workers", secAbout: "About Us", aboutDesc: "We represent the pinnacle of luxury and craftsmanship. Every detail is meticulously engineered to provide an unparalleled experience of elegance and performance.", secContact: "Inquiries", generalEnq: "General Enquiries", mediaEnq: "Media & Press", secOffice: "Headquarters", directions: "Get Directions", secWorkers: "Our Artisans", w1T: "The Designers", w1D: "Bespoke visionaries creating timeless silhouettes.", w2T: "The Craftsmen", w2D: "Mastering the art of precision and luxury finish.", w3T: "The Engineers", w3D: "Powering the soul of every movement.", secCopart: "Copart Deal of the Day", cotdBadge: "HOT DEAL", cotdVin: "VIN:", cotdStatus: "Pipeline Status:", cotdBid: "Current Bid / Buy It Now:", cotdBtn: "Contact to Bid",
+            en: {
+                home: "Home", dealMenu: "Deal of the Day", about: "About Us", menu: "Menu", calcMenu: "Shipping Calculator",
+                secCalc: "Delivery Cost Calculator", calcAuction: "Select Auction", calcOrigin: "Select Origin City (USA)", calcDest: "Select Destination Port", calcEst: "Estimated Shipping Cost:",
+                portal: "MAi Portal", heroTitle: "Inspiring Greatness", cta: "Discover More", contact: "Contact", office: "Office Location", workers: "Workers", secAbout: "About Us", aboutDesc: "Our company is a trusted partner in selecting and importing cars from the USA. Our goal is to offer customers the most transparent, fast, and secure service.<br><br>We work with leading auctions such as Copart and IAAI, which allows us to select the best vehicles at the most competitive prices.<br><br>Our team approaches each client individually and manages the full process from vehicle selection to shipping and customs clearance.<br><br>For us, trust, quality, and customer satisfaction come first.", secOffice: "Headquarters", directions: "Get Directions", secWorkers: "Our Artisans", w1T: "The Designers", w1D: "Bespoke visionaries creating timeless silhouettes.", w2T: "The Craftsmen", w2D: "Mastering the art of precision and luxury finish.", w3T: "The Engineers", w3D: "Powering the soul of every movement.", secCopart: "Copart Deal of the Day", cotdBadge: "HOT DEAL", cotdVin: "VIN:", cotdStatus: "Pipeline Status:", cotdBid: "Current Bid / Buy It Now:", cotdBtn: "Contact to Bid",
                 formTitle: "Request a Vehicle", formSub: "Tell us what you are looking for, and our experts will handle the rest.", formName: "Full Name", formPhone: "Phone Number", formEmail: "Email Address", formType: "Inquiry Type", formCar: "Vehicle Details (Make, Model, Year, or VIN/Lot #)", formMsg: "Additional Details", formBtn: "Submit Inquiry", optCustom: "Custom Import Request", optBid: "Auction Bidding (Copart/IAAI)", optDeal: "Deal of the Day Question", optGen: "General Question"
             },
-            ge: { 
-                home: "áƒ›áƒ—áƒáƒ•áƒáƒ áƒ˜", dealMenu: "áƒ“áƒ¦áƒ˜áƒ¡ áƒ¨áƒ”áƒ—áƒáƒ•áƒáƒ–áƒ”áƒ‘áƒ", about: "áƒ©áƒ•áƒ”áƒœáƒ¡ áƒ¨áƒ”áƒ¡áƒáƒ®áƒ”áƒ‘", menu: "áƒ›áƒ”áƒœáƒ˜áƒ£", calcMenu: "áƒ™áƒáƒšáƒ™áƒ£áƒšáƒáƒ¢áƒáƒ áƒ˜", 
-                secCalc: "áƒ›áƒ˜áƒ¬áƒáƒ“áƒ”áƒ‘áƒ˜áƒ¡ áƒ¦áƒ˜áƒ áƒ”áƒ‘áƒ£áƒšáƒ”áƒ‘áƒ", calcAuction: "áƒáƒ˜áƒ áƒ©áƒ˜áƒ”áƒ— áƒáƒ£áƒ¥áƒªáƒ˜áƒáƒœáƒ˜", calcOrigin: "áƒáƒ˜áƒ áƒ©áƒ˜áƒ”áƒ— áƒ¡áƒáƒ¬áƒ§áƒ˜áƒ¡áƒ˜ áƒ¥áƒáƒšáƒáƒ¥áƒ˜", calcDest: "áƒáƒ˜áƒ áƒ©áƒ˜áƒ”áƒ— áƒ“áƒáƒœáƒ˜áƒ¨áƒœáƒ£áƒšáƒ”áƒ‘áƒ˜áƒ¡ áƒžáƒáƒ áƒ¢áƒ˜", calcEst: "áƒ¡áƒáƒ•áƒáƒ áƒáƒ£áƒ“áƒ áƒ¦áƒ˜áƒ áƒ”áƒ‘áƒ£áƒšáƒ”áƒ‘áƒ:", 
-                portal: "MAi áƒžáƒáƒ áƒ¢áƒáƒšáƒ˜", heroTitle: "áƒ¨áƒ—áƒáƒáƒ’áƒáƒœáƒ” áƒ¡áƒ˜áƒ“áƒ˜áƒáƒ“áƒ”", cta: "áƒ’áƒáƒ˜áƒ’áƒ” áƒ›áƒ”áƒ¢áƒ˜", contact: "áƒ™áƒáƒœáƒ¢áƒáƒ¥áƒ¢áƒ˜", office: "áƒáƒ¤áƒ˜áƒ¡áƒ˜áƒ¡ áƒ›áƒ“áƒ”áƒ‘áƒáƒ áƒ”áƒáƒ‘áƒ", workers: "áƒ—áƒáƒœáƒáƒ›áƒ¨áƒ áƒáƒ›áƒšáƒ”áƒ‘áƒ˜", secAbout: "áƒ©áƒ•áƒ”áƒœáƒ¡ áƒ¨áƒ”áƒ¡áƒáƒ®áƒ”áƒ‘", aboutDesc: "áƒ©áƒ•áƒ”áƒœ áƒ¬áƒáƒ áƒ›áƒáƒ•áƒáƒ“áƒ’áƒ”áƒœáƒ— áƒ¤áƒ£áƒ¤áƒ£áƒœáƒ”áƒ‘áƒ˜áƒ¡áƒ áƒ“áƒ áƒáƒ¡áƒ¢áƒáƒ¢áƒáƒ‘áƒ˜áƒ¡ áƒ›áƒ¬áƒ•áƒ”áƒ áƒ•áƒáƒšáƒ¡.", secContact: "áƒ’áƒáƒ›áƒáƒ™áƒ˜áƒ—áƒ®áƒ•áƒ”áƒ‘áƒ˜", generalEnq: "áƒ–áƒáƒ’áƒáƒ“áƒ˜ áƒ™áƒ˜áƒ—áƒ®áƒ•áƒ”áƒ‘áƒ˜", mediaEnq: "áƒ›áƒ”áƒ“áƒ˜áƒ áƒ“áƒ áƒžáƒ áƒ”áƒ¡áƒ", secOffice: "áƒ¡áƒáƒ—áƒáƒ áƒáƒ¤áƒ˜áƒ¡áƒ˜", directions: "áƒ›áƒ˜áƒ›áƒáƒ áƒ—áƒ£áƒšáƒ”áƒ‘áƒ”áƒ‘áƒ˜", secWorkers: "áƒ©áƒ•áƒ”áƒœáƒ˜ áƒ®áƒ”áƒšáƒáƒ¡áƒœáƒ”áƒ‘áƒ˜", w1T: "áƒ“áƒ˜áƒ–áƒáƒ˜áƒœáƒ”áƒ áƒ”áƒ‘áƒ˜", w1D: "áƒ‘áƒ”áƒ¡áƒžáƒáƒ™ áƒ•áƒ˜áƒ–áƒ˜áƒáƒœáƒ”áƒ áƒ”áƒ‘áƒ˜.", w2T: "áƒ®áƒ”áƒšáƒáƒ¡áƒœáƒ”áƒ‘áƒ˜", w2D: "áƒ¡áƒ˜áƒ–áƒ£áƒ¡áƒ¢áƒ˜áƒ¡áƒ áƒ“áƒ áƒ¤áƒ£áƒ¤áƒ£áƒœáƒ”áƒ‘áƒ˜áƒ¡ áƒ“áƒáƒ¡áƒ áƒ£áƒšáƒ”áƒ‘áƒ.", w3T: "áƒ˜áƒœáƒŸáƒ˜áƒœáƒ áƒ”áƒ‘áƒ˜", w3D: "áƒ§áƒáƒ•áƒ”áƒšáƒ˜ áƒ›áƒáƒ«áƒ áƒáƒáƒ‘áƒ˜áƒ¡ áƒ¡áƒ£áƒšáƒ˜áƒ¡ áƒ”áƒœáƒ”áƒ áƒ’áƒ˜áƒ.", secCopart: "áƒ“áƒ¦áƒ˜áƒ¡ Copart áƒ¨áƒ”áƒ—áƒáƒ•áƒáƒ–áƒ”áƒ‘áƒ", cotdBadge: "áƒªáƒ®áƒ”áƒšáƒ˜ áƒ¤áƒáƒ¡áƒ˜", cotdVin: "VIN:", cotdStatus: "áƒ¡áƒ¢áƒáƒ¢áƒ£áƒ¡áƒ˜:", cotdBid: "áƒ›áƒ˜áƒ›áƒ“áƒ˜áƒœáƒáƒ áƒ” áƒ¤áƒáƒ¡áƒ˜:", cotdBtn: "áƒ“áƒáƒ’áƒ•áƒ˜áƒ™áƒáƒ•áƒ¨áƒ˜áƒ áƒ“áƒ˜áƒ—",
-                formTitle: "áƒ›áƒáƒ˜áƒ—áƒ®áƒáƒ•áƒ”áƒ— áƒáƒ•áƒ¢áƒáƒ›áƒáƒ‘áƒ˜áƒšáƒ˜", formSub: "áƒ’áƒ•áƒ˜áƒ—áƒ®áƒáƒ áƒ˜áƒ— áƒ áƒáƒ¡ áƒ”áƒ«áƒ”áƒ‘áƒ— áƒ“áƒ áƒ©áƒ•áƒ”áƒœáƒ˜ áƒ”áƒ¥áƒ¡áƒžáƒ”áƒ áƒ¢áƒ”áƒ‘áƒ˜ áƒ˜áƒ–áƒ áƒ£áƒœáƒ”áƒ‘áƒ”áƒœ áƒ“áƒáƒœáƒáƒ áƒ©áƒ”áƒœáƒ–áƒ”.", formName: "áƒ¡áƒ áƒ£áƒšáƒ˜ áƒ¡áƒáƒ®áƒ”áƒšáƒ˜", formPhone: "áƒ¢áƒ”áƒšáƒ”áƒ¤áƒáƒœáƒ˜áƒ¡ áƒœáƒáƒ›áƒ”áƒ áƒ˜", formEmail: "áƒ”áƒš. áƒ¤áƒáƒ¡áƒ¢áƒ", formType: "áƒ›áƒáƒ—áƒ®áƒáƒ•áƒœáƒ˜áƒ¡ áƒ¢áƒ˜áƒžáƒ˜", formCar: "áƒ›áƒáƒœáƒ¥áƒáƒœáƒ˜áƒ¡ áƒ“áƒ”áƒ¢áƒáƒšáƒ”áƒ‘áƒ˜ (áƒ›áƒáƒ áƒ™áƒ, áƒ›áƒáƒ“áƒ”áƒšáƒ˜, áƒ¬áƒ”áƒšáƒ˜, áƒáƒœ VIN/áƒšáƒáƒ¢áƒ˜)", formMsg: "áƒ“áƒáƒ›áƒáƒ¢áƒ”áƒ‘áƒ˜áƒ—áƒ˜ áƒ“áƒ”áƒ¢áƒáƒšáƒ”áƒ‘áƒ˜", formBtn: "áƒ›áƒáƒ—áƒ®áƒáƒ•áƒœáƒ˜áƒ¡ áƒ’áƒáƒ’áƒ–áƒáƒ•áƒœáƒ", optCustom: "áƒáƒ•áƒ¢áƒáƒ›áƒáƒ‘áƒ˜áƒšáƒ˜áƒ¡ áƒ¨áƒ”áƒ™áƒ•áƒ”áƒ—áƒ", optBid: "áƒáƒ£áƒ¥áƒªáƒ˜áƒáƒœáƒ–áƒ” áƒ•áƒáƒ­áƒ áƒáƒ‘áƒ (Copart/IAAI)", optDeal: "áƒ“áƒ¦áƒ˜áƒ¡ áƒ¨áƒ”áƒ—áƒáƒ•áƒáƒ–áƒ”áƒ‘áƒ˜áƒ¡ áƒ™áƒ˜áƒ—áƒ®áƒ•áƒ", optGen: "áƒ–áƒáƒ’áƒáƒ“áƒ˜ áƒ™áƒ˜áƒ—áƒ®áƒ•áƒ"
+            ge: {
+                home: "მთავარი", dealMenu: "დღის შეთავაზება", about: "ჩვენს შესახებ", menu: "მენიუ", calcMenu: "ტრანსპორტირების კალკულატორი",
+                secCalc: "მიწოდების ღირებულების კალკულატორი", calcAuction: "აირჩიეთ აუქციონი", calcOrigin: "აირჩიეთ გამგზავრების ქალაქი (აშშ)", calcDest: "აირჩიეთ დანიშნულების პორტი", calcEst: "სავარაუდო ტრანსპორტირების ღირებულება:",
+                portal: "MAi პორტალი", heroTitle: "საიმედო არჩევანი ამერიკული ავტომობილებისთვის", cta: "გაიგე მეტი", contact: "კონტაქტი", office: "ოფისის მისამართი", workers: "გუნდი", secAbout: "ჩვენს შესახებ", aboutDesc: "ჩვენი კომპანია წარმოადგენს სანდო პარტნიორს ავტომობილების შერჩევასა და ამერიკიდან ჩამოყვანის პროცესში. ჩვენი მიზანია, მომხმარებელს შევთავაზოთ მაქსიმალურად გამჭვირვალე, სწრაფი და უსაფრთხო სერვისი.<br><br>ჩვენ ვთანამშრომლობთ წამყვან აუქციონებთან, როგორიცაა Copart და IAAI, რაც გვაძლევს შესაძლებლობას შევარჩიოთ საუკეთესო ავტომობილები ყველაზე კონკურენტულ ფასად.<br><br>ჩვენი გუნდი თითოეულ კლიენტს ინდივიდუალურად უდგება და მანქანის შერჩევიდან მის ჩამოყვანამდე და განბაჟებამდე სრულ პროცესს აკონტროლებს.<br><br>ჩვენთვის მთავარი არის ნდობა, ხარისხი და კლიენტის კმაყოფილება.", secOffice: "მთავარი ოფისი", directions: "მიმართულების ნახვა", secWorkers: "ჩვენი გუნდი", w1T: "შერჩევის სპეციალისტები", w1D: "ვპოულობთ თქვენთვის საუკეთესო ვარიანტს აუქციონებზე.", w2T: "ლოგისტიკის გუნდი", w2D: "ვაკონტროლებთ ტრანსპორტირებას, პორტს და მიწოდების პროცესს.", w3T: "კლიენტთა მხარდაჭერა", w3D: "თქვენთან ერთად ვართ შეძენიდან ჩაბარებამდე.", secCopart: "დღის შეთავაზება Copart-იდან", cotdBadge: "ცხელი ფასი", cotdVin: "VIN:", cotdStatus: "სტატუსი:", cotdBid: "მიმდინარე ფასი / Buy It Now:", cotdBtn: "დაგვიკავშირდით",
+                formTitle: "მოითხოვეთ ავტომობილი", formSub: "გვითხარით რას ეძებთ და ჩვენ ვიზრუნებთ დანარჩენზე.", formName: "სახელი და გვარი", formPhone: "ტელეფონის ნომერი", formEmail: "ელ. ფოსტა", formType: "მოთხოვნის ტიპი", formCar: "ავტომობილის დეტალები (მარკა, მოდელი, წელი ან VIN/Lot #)", formMsg: "დამატებითი ინფორმაცია", formBtn: "გაგზავნა", optCustom: "ინდივიდუალური შეკვეთა", optBid: "აუქციონზე მონაწილეობა (Copart/IAAI)", optDeal: "დღის შეთავაზებაზე კითხვა", optGen: "ზოგადი კითხვა"
             },
-            ru: { 
-                home: "Ð“Ð»Ð°Ð²Ð½Ð°Ñ", dealMenu: "Ð¡Ð´ÐµÐ»ÐºÐ° Ð´Ð½Ñ", about: "Ðž Ð½Ð°Ñ", menu: "ÐœÐµÐ½ÑŽ", calcMenu: "ÐšÐ°Ð»ÑŒÐºÑƒÐ»ÑÑ‚Ð¾Ñ€ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸", 
-                secCalc: "Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸", calcAuction: "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½", calcOrigin: "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð³Ð¾Ñ€Ð¾Ð´ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ", calcDest: "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ñ€Ñ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ", calcEst: "ÐŸÑ€Ð¸Ð¼ÐµÑ€Ð½Ð°Ñ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ:", 
-                portal: "MAi ÐŸÐ¾Ñ€Ñ‚Ð°Ð»", heroTitle: "Ð’Ð´Ð¾Ñ…Ð½Ð¾Ð²Ð»ÑÑ Ð½Ð° Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ðµ", cta: "Ð£Ð·Ð½Ð°Ñ‚ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐµ", contact: "ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚", office: "Ð Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¾Ñ„Ð¸ÑÐ°", workers: "Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¸", secAbout: "Ðž Ð½Ð°Ñ", aboutDesc: "ÐœÑ‹ Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÑÐµÐ¼ ÑÐ¾Ð±Ð¾Ð¹ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ Ñ€Ð¾ÑÐºÐ¾ÑˆÐ¸ Ð¸ Ð¼Ð°ÑÑ‚ÐµÑ€ÑÑ‚Ð²Ð°.", secContact: "Ð—Ð°Ð¿Ñ€Ð¾ÑÑ‹", generalEnq: "ÐžÐ±Ñ‰Ð¸Ðµ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹", mediaEnq: "ÐœÐµÐ´Ð¸Ð° Ð¸ Ð¿Ñ€ÐµÑÑÐ°", secOffice: "Ð¨Ñ‚Ð°Ð±-ÐºÐ²Ð°Ñ€Ñ‚Ð¸Ñ€Ð°", directions: "ÐŸÑ€Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÑŒ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚", secWorkers: "ÐÐ°ÑˆÐ¸ Ð¼Ð°ÑÑ‚ÐµÑ€Ð°", w1T: "Ð”Ð¸Ð·Ð°Ð¹Ð½ÐµÑ€Ñ‹", w1D: "Ð’Ð¸Ð·Ð¸Ð¾Ð½ÐµÑ€Ñ‹, ÑÐ¾Ð·Ð´Ð°ÑŽÑ‰Ð¸Ðµ ÑÐ¸Ð»ÑƒÑÑ‚Ñ‹.", w2T: "ÐœÐ°ÑÑ‚ÐµÑ€Ð°", w2D: "Ð˜ÑÐºÑƒÑÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚Ð¸.", w3T: "Ð˜Ð½Ð¶ÐµÐ½ÐµÑ€Ñ‹", w3D: "ÐŸÑ€Ð¸Ð²Ð¾Ð´Ñ Ð² Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð´ÑƒÑˆÑƒ.", secCopart: "Ð¡Ð´ÐµÐ»ÐºÐ° Ð´Ð½Ñ Copart", cotdBadge: "Ð›Ð£Ð§Ð¨ÐÐ¯ Ð¦Ð•ÐÐ", cotdVin: "VIN:", cotdStatus: "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ:", cotdBid: "Ð¢ÐµÐºÑƒÑ‰Ð°Ñ ÑÑ‚Ð°Ð²ÐºÐ°:", cotdBtn: "Ð¡Ð²ÑÐ·Ð°Ñ‚ÑŒÑÑ Ð´Ð»Ñ ÑÑ‚Ð°Ð²ÐºÐ¸",
-                formTitle: "Ð—Ð°Ð¿Ñ€Ð¾Ñ Ð½Ð° Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»ÑŒ", formSub: "Ð Ð°ÑÑÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð½Ð°Ð¼, Ñ‡Ñ‚Ð¾ Ð²Ñ‹ Ð¸Ñ‰ÐµÑ‚Ðµ, Ð¸ Ð½Ð°ÑˆÐ¸ ÑÐºÑÐ¿ÐµÑ€Ñ‚Ñ‹ Ð¿Ð¾Ð·Ð°Ð±Ð¾Ñ‚ÑÑ‚ÑÑ Ð¾Ð± Ð¾ÑÑ‚Ð°Ð»ÑŒÐ½Ð¾Ð¼.", formName: "ÐŸÐ¾Ð»Ð½Ð¾Ðµ Ð¸Ð¼Ñ", formPhone: "ÐÐ¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°", formEmail: "Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð°Ñ Ð¿Ð¾Ñ‡Ñ‚Ð°", formType: "Ð¢Ð¸Ð¿ Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°", formCar: "Ð”ÐµÑ‚Ð°Ð»Ð¸ Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ (ÐœÐ°Ñ€ÐºÐ°, ÐœÐ¾Ð´ÐµÐ»ÑŒ, Ð“Ð¾Ð´ Ð¸Ð»Ð¸ VIN/Ð›Ð¾Ñ‚)", formMsg: "Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð´ÐµÑ‚Ð°Ð»Ð¸", formBtn: "ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð¿Ñ€Ð¾Ñ", optCustom: "Ð—Ð°ÐºÐ°Ð· Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ", optBid: "Ð£Ñ‡Ð°ÑÑ‚Ð¸Ðµ Ð² Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ðµ (Copart/IAAI)", optDeal: "Ð’Ð¾Ð¿Ñ€Ð¾Ñ Ð¿Ð¾ Ð¡Ð´ÐµÐ»ÐºÐµ Ð´Ð½Ñ", optGen: "ÐžÐ±Ñ‰Ð¸Ð¹ Ð²Ð¾Ð¿Ñ€Ð¾Ñ"
+            ru: {
+                home: "Главная", dealMenu: "Сделка дня", about: "О нас", menu: "Меню", calcMenu: "Калькулятор доставки",
+                secCalc: "Калькулятор стоимости доставки", calcAuction: "Выберите аукцион", calcOrigin: "Выберите город отправки (США)", calcDest: "Выберите порт назначения", calcEst: "Примерная стоимость доставки:",
+                portal: "MAi Портал", heroTitle: "Надежный выбор автомобилей из США", cta: "Узнать больше", contact: "Контакты", office: "Адрес офиса", workers: "Команда", secAbout: "О нас", aboutDesc: "Наша компания является надежным партнером в подборе и доставке автомобилей из США. Наша цель — предложить клиентам максимально прозрачный, быстрый и безопасный сервис.<br><br>Мы сотрудничаем с ведущими аукционами, такими как Copart и IAAI, что позволяет нам подбирать лучшие автомобили по самым конкурентным ценам.<br><br>Наша команда подходит к каждому клиенту индивидуально и контролирует весь процесс от подбора автомобиля до его доставки и таможенного оформления.<br><br>Для нас главное — доверие, качество и удовлетворенность клиента.", secOffice: "Главный офис", directions: "Проложить маршрут", secWorkers: "Наша команда", w1T: "Специалисты по подбору", w1D: "Находим для вас лучшие варианты на аукционах.", w2T: "Логистическая команда", w2D: "Контролируем перевозку, порт и весь процесс доставки.", w3T: "Поддержка клиентов", w3D: "Сопровождаем вас от покупки до передачи автомобиля.", secCopart: "Сделка дня Copart", cotdBadge: "ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ", cotdVin: "VIN:", cotdStatus: "Статус:", cotdBid: "Текущая ставка / Buy It Now:", cotdBtn: "Связаться для ставки",
+                formTitle: "Запрос на автомобиль", formSub: "Расскажите, что вы ищете, и наши специалисты позаботятся обо всем остальном.", formName: "Полное имя", formPhone: "Номер телефона", formEmail: "Электронная почта", formType: "Тип запроса", formCar: "Детали автомобиля (марка, модель, год или VIN/Lot #)", formMsg: "Дополнительная информация", formBtn: "Отправить запрос", optCustom: "Индивидуальный заказ", optBid: "Участие в аукционе (Copart/IAAI)", optDeal: "Вопрос по сделке дня", optGen: "Общий вопрос"
             }
         };
 
+        function applyLanguage(lang) {
+            const t = translations[lang] || translations.en;
+
+            document.documentElement.lang = lang;
+            localStorage.setItem('megaCarsLang', lang);
+
+            document.getElementById('txt-menu').textContent = t.menu;
+            document.getElementById('txt-portal').textContent = t.portal;
+            document.getElementById('txt-hero-title').textContent = t.heroTitle;
+            document.getElementById('txt-cta').textContent = t.cta;
+
+            document.getElementById('txt-sec-copart').textContent = t.secCopart;
+            document.getElementById('txt-cotd-badge').textContent = t.cotdBadge;
+            document.getElementById('txt-cotd-vin').textContent = t.cotdVin;
+            document.getElementById('txt-cotd-status').textContent = t.cotdStatus;
+            document.getElementById('txt-cotd-bid').textContent = t.cotdBid;
+            document.getElementById('txt-cotd-btn').textContent = t.cotdBtn;
+
+            document.getElementById('txt-sec-calc').textContent = t.secCalc;
+            document.getElementById('txt-calc-auction').textContent = t.calcAuction;
+            document.getElementById('txt-calc-origin').textContent = t.calcOrigin;
+            document.getElementById('txt-calc-dest').textContent = t.calcDest;
+            document.getElementById('txt-calc-est').textContent = t.calcEst;
+
+            document.querySelector('[data-key="home"]').textContent = t.home;
+            document.querySelector('[data-key="dealMenu"]').textContent = t.dealMenu;
+            document.querySelector('[data-key="calcMenu"]').textContent = t.calcMenu;
+            document.querySelector('[data-key="about"]').textContent = t.about;
+            document.querySelector('[data-key="contact"]').textContent = t.contact;
+            document.querySelector('[data-key="office"]').textContent = t.office;
+            document.querySelector('[data-key="workers"]').textContent = t.workers;
+            document.querySelector('[data-key="portal"]').textContent = t.portal;
+
+            document.getElementById('txt-sec-about').textContent = t.secAbout;
+            document.getElementById('txt-about-desc').innerHTML = t.aboutDesc;
+
+            document.getElementById('txt-sec-office').textContent = t.secOffice;
+            document.getElementById('txt-directions').textContent = t.directions;
+            document.getElementById('txt-sec-workers').textContent = t.secWorkers;
+
+            document.getElementById('txt-w1-title').textContent = t.w1T;
+            document.getElementById('txt-w1-desc').textContent = t.w1D;
+            document.getElementById('txt-w2-title').textContent = t.w2T;
+            document.getElementById('txt-w2-desc').textContent = t.w2D;
+            document.getElementById('txt-w3-title').textContent = t.w3T;
+            document.getElementById('txt-w3-desc').textContent = t.w3D;
+
+            document.getElementById('txt-form-title').textContent = t.formTitle;
+            document.getElementById('txt-form-sub').textContent = t.formSub;
+            document.getElementById('txt-form-name').textContent = t.formName;
+            document.getElementById('txt-form-phone').textContent = t.formPhone;
+            document.getElementById('txt-form-email').textContent = t.formEmail;
+            document.getElementById('txt-form-type').textContent = t.formType;
+            document.getElementById('txt-form-car').textContent = t.formCar;
+            document.getElementById('txt-form-msg').textContent = t.formMsg;
+            document.getElementById('txt-form-btn').textContent = t.formBtn;
+            document.getElementById('txt-opt-custom').textContent = t.optCustom;
+            document.getElementById('txt-opt-bid').textContent = t.optBid;
+            document.getElementById('txt-opt-deal').textContent = t.optDeal;
+            document.getElementById('txt-opt-gen').textContent = t.optGen;
+
+            document.querySelectorAll('.lang-link').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
         langLinks.forEach(link => {
             link.addEventListener('click', () => {
-                const lang = link.getAttribute('data-lang');
-                const t = translations[lang];
-
-                document.getElementById('txt-menu').textContent = t.menu;
-                document.getElementById('txt-portal').textContent = t.portal;
-                document.getElementById('txt-hero-title').textContent = t.heroTitle;
-                document.getElementById('txt-cta').textContent = t.cta;
-                
-                document.getElementById('txt-sec-copart').textContent = t.secCopart;
-                document.getElementById('txt-cotd-badge').textContent = t.cotdBadge;
-                document.getElementById('txt-cotd-vin').textContent = t.cotdVin;
-                document.getElementById('txt-cotd-status').textContent = t.cotdStatus;
-                document.getElementById('txt-cotd-bid').textContent = t.cotdBid;
-                document.getElementById('txt-cotd-btn').textContent = t.cotdBtn;
-
-                document.getElementById('txt-sec-calc').textContent = t.secCalc;
-                document.getElementById('txt-calc-auction').textContent = t.calcAuction;
-                document.getElementById('txt-calc-origin').textContent = t.calcOrigin;
-                document.getElementById('txt-calc-dest').textContent = t.calcDest;
-                document.getElementById('txt-calc-est').textContent = t.calcEst;
-
-                document.querySelector('[data-key="home"]').textContent = t.home;
-                document.querySelector('[data-key="dealMenu"]').textContent = t.dealMenu;
-                document.querySelector('[data-key="calcMenu"]').textContent = t.calcMenu;
-                document.querySelector('[data-key="about"]').textContent = t.about;
-                document.querySelector('[data-key="contact"]').textContent = t.contact;
-                document.querySelector('[data-key="office"]').textContent = t.office;
-                document.querySelector('[data-key="workers"]').textContent = t.workers;
-                document.querySelector('[data-key="portal"]').textContent = t.portal;
-
-                document.getElementById('txt-sec-about').textContent = t.secAbout;
-                document.getElementById('txt-about-desc').textContent = t.aboutDesc;
-
-                document.getElementById('txt-sec-office').textContent = t.secOffice;
-                document.getElementById('txt-directions').textContent = t.directions;
-                document.getElementById('txt-sec-workers').textContent = t.secWorkers;
-
-                document.getElementById('txt-w1-title').textContent = t.w1T;
-                document.getElementById('txt-w1-desc').textContent = t.w1D;
-                document.getElementById('txt-w2-title').textContent = t.w2T;
-                document.getElementById('txt-w2-desc').textContent = t.w2D;
-                document.getElementById('txt-w3-title').textContent = t.w3T;
-                document.getElementById('txt-w3-desc').textContent = t.w3D;
-
-                // INQUIRY FORM TRANSLATIONS
-                document.getElementById('txt-form-title').textContent = t.formTitle;
-                document.getElementById('txt-form-sub').textContent = t.formSub;
-                document.getElementById('txt-form-name').textContent = t.formName;
-                document.getElementById('txt-form-phone').textContent = t.formPhone;
-                document.getElementById('txt-form-email').textContent = t.formEmail;
-                document.getElementById('txt-form-type').textContent = t.formType;
-                document.getElementById('txt-form-car').textContent = t.formCar;
-                document.getElementById('txt-form-msg').textContent = t.formMsg;
-                document.getElementById('txt-form-btn').textContent = t.formBtn;
-                document.getElementById('txt-opt-custom').textContent = t.optCustom;
-                document.getElementById('txt-opt-bid').textContent = t.optBid;
-                document.getElementById('txt-opt-deal').textContent = t.optDeal;
-                document.getElementById('txt-opt-gen').textContent = t.optGen;
-
-                document.querySelectorAll('.lang-link').forEach(btn => btn.classList.remove('active'));
-                link.classList.add('active');
+                applyLanguage(link.getAttribute('data-lang'));
             });
         });
+
+        applyLanguage(localStorage.getItem('megaCarsLang') || 'en');
     </script>
 </body>
 </html>
