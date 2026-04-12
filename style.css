@@ -143,9 +143,10 @@ body {
 }
 
 .lang-link.active {
-    color: #ffffff;
-    background-color: rgba(255, 204, 0, 0.18);
-    box-shadow: inset 0 0 0 1px rgba(255, 204, 0, 0.55);
+    color: #000000;
+    background-color: #ffcc00;
+    box-shadow: 0 0 14px rgba(255, 204, 0, 0.35);
+    font-weight: 700;
 }
 
 .lang-link:hover {
