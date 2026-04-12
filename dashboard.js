@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
     // 1. SESSION GUARD
     const userData = JSON.parse(sessionStorage.getItem('mai_user'));
     if (!userData) { window.location.replace('login.html'); return; }
@@ -57,10 +57,9 @@
             const cars = await res.json();
             carGrid.innerHTML = '';
             
-            const myCars = role === 'admin' ? cars : cars.filter(c => c.dealerId === currentUsername);
-            window.maiCars = myCars;
+            window.maiCars = cars;
 
-            myCars.forEach(car => {
+            cars.forEach(car => {
                 const card = document.createElement('div');
                 card.classList.add('car-card');
                 if(car.isFeatured) card.style.border = '1px solid #ffcc00';
@@ -73,8 +72,8 @@
                 card.innerHTML = `
                     <div class="car-image">
                         ${previewImg ? `<img src="${previewImg}">` : '<div style="padding:20px; text-align:center; color:#555;">No Photo</div>'}
-                        ${role === 'admin' ? `<button style="position:absolute; top:10px; right:40px; background:#111; color:#fff; border:none; padding:5px 10px; cursor:pointer;" onclick="event.stopPropagation(); featureCar('${car._id}')">⭐</button>` : ''}
-                        ${role === 'admin' ? `<button style="position:absolute; top:10px; right:10px; background:#ff4444; color:#fff; border:none; padding:5px 10px; cursor:pointer;" onclick="event.stopPropagation(); deleteCar('${car._id}')">×</button>` : ''}
+                        ${role === 'admin' ? `<button style="position:absolute; top:10px; right:40px; background:#111; color:#fff; border:none; padding:5px 10px; cursor:pointer;" onclick="event.stopPropagation(); featureCar('${car._id}')">â­</button>` : ''}
+                        ${role === 'admin' ? `<button style="position:absolute; top:10px; right:10px; background:#ff4444; color:#fff; border:none; padding:5px 10px; cursor:pointer;" onclick="event.stopPropagation(); deleteCar('${car._id}')">Ã—</button>` : ''}
                     </div>
                     <div class="car-details">
                         <h4>${car.makeModel}</h4>
@@ -99,25 +98,31 @@
             galleryHtml = '<p style="color: #888;">No photos uploaded.</p>';
         }
 
+        let docsHtml = '<ul style="list-style:none; padding:0; margin-bottom:10px;">';
+        if (car.documents && car.documents.length > 0) {
+            car.documents.forEach(doc => { docsHtml += `<li style="margin-bottom:5px;"><a href="/uploads/${doc.filename}" target="_blank" style="color:#ffcc00; text-decoration:none;">Document: ${doc.originalName}</a></li>`; });
+        } else {
+            docsHtml += '<li style="color: #888; font-size: 14px;">No documents.</li>';
+        }
+        docsHtml += '</ul>';
+
+        const documentsSection = `
+            <div class="modal-details-box" style="margin-top: 15px;">
+                <h3 style="color:#fff; margin-bottom:10px; border-bottom:1px solid #333; padding-bottom:5px;">Documents</h3>
+                ${docsHtml}
+            </div>
+        `;
+
         let adminTools = '';
         if (role === 'admin') {
-            let docsHtml = '<ul style="list-style:none; padding:0; margin-bottom:10px;">';
-            if (car.documents && car.documents.length > 0) {
-                car.documents.forEach(doc => { docsHtml += `<li style="margin-bottom:5px;"><a href="/uploads/${doc.filename}" target="_blank" style="color:#ffcc00; text-decoration:none;">📄 ${doc.originalName}</a></li>`; });
-            } else {
-                docsHtml += '<li style="color: #888; font-size: 14px;">No documents.</li>';
-            }
-            docsHtml += '</ul>';
-
             adminTools = `
                 <div class="modal-details-box" style="margin-top: 15px;">
                     <h3 style="color:#fff; margin-bottom:10px; border-bottom:1px solid #333; padding-bottom:5px;">Admin Tools</h3>
-                    ${docsHtml}
                     <div style="display:flex; gap:10px; margin-top:10px;">
                         <input type="file" id="newDocFile-${car._id}" multiple style="background:#000; color:#fff; border:1px solid #333; padding:10px; flex:1;">
                         <button class="btn-primary" style="width:auto; padding:10px 20px;" onclick="uploadDoc('${car._id}')">Upload</button>
                     </div>
-                    <button class="btn-primary" style="margin-top: 15px; background: #333; color: #fff;" onclick="showEditForm('${car._id}')">✏️ Edit Car Details</button>
+                    <button class="btn-primary" style="margin-top: 15px; background: #333; color: #fff;" onclick="showEditForm('${car._id}')">Edit Car Details</button>
                 </div>
             `;
         }
@@ -158,7 +163,7 @@
             <div class="modal-details-box" style="margin-top: 15px;">
                 <p style="display: flex; align-items: center; justify-content:space-between;">
                     <strong style="color:#fff;">Pipeline Status:</strong>
-                    <select onchange="updateCarStatus('${car._id}', this.value)" style="padding:10px; background:#000; color:#fff; border:1px solid #333; border-radius:4px;">
+                    <select onchange="updateCarStatus('${car._id}', this.value)" style="padding:10px; background:#000; color:#fff; border:1px solid #333; border-radius:4px;" ${role === 'admin' ? '' : 'disabled'}>
                         <option value="Purchased" ${car.status === 'Purchased' ? 'selected' : ''}>Purchased</option>
                         <option value="In Transit" ${car.status === 'In Transit' ? 'selected' : ''}>In Transit</option>
                         <option value="At Customs" ${car.status === 'At Customs' ? 'selected' : ''}>At Customs</option>
@@ -168,6 +173,7 @@
                 </p>
             </div>
             
+            ${documentsSection}
             ${adminTools}
 
             <h3 style="margin-top: 20px; color:#fff;">Gallery</h3>
