@@ -10,8 +10,8 @@ const createInitialAdmin = async () => {
         console.log("Connected to MongoDB...");
 
         // 2. Setup your details
-        const username = "Revaz_Admin";
-        const password = "YourSecurePassword123"; // Change this!
+        const username = "Rezu";
+        const password = "Rezi170707"; // Change this!
         const role = "admin";
 
         // 3. Check if user already exists
